@@ -27,11 +27,6 @@ const Hero = ({ data }) => {
   return (
     <section id="home" className="hero-section">
       <div className="hero-background">
-        <img 
-          src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1920&h=1080&fit=crop" 
-          alt="Developer workspace" 
-          className="hero-image"
-        />
         <div className="hero-overlay"></div>
       </div>
 
