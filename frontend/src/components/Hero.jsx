@@ -14,6 +14,16 @@ const Hero = ({ data }) => {
     }
   };
 
+  // Floating code elements
+  const codeElements = [
+    { text: 'const dev = "Hasnain";', top: '15%', left: '10%', delay: 0 },
+    { text: '{ Laravel, React }', top: '25%', right: '15%', delay: 0.5 },
+    { text: 'function() { return ✨; }', top: '60%', left: '5%', delay: 1 },
+    { text: 'PHP + MySQL', top: '70%', right: '10%', delay: 1.5 },
+    { text: 'API.create()', top: '40%', right: '20%', delay: 0.8 },
+    { text: '<?php echo "Hello"; ?>', top: '80%', left: '15%', delay: 2 }
+  ];
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-background">
@@ -24,6 +34,24 @@ const Hero = ({ data }) => {
         />
         <div className="hero-overlay"></div>
       </div>
+
+      {/* Floating Code Elements */}
+      {codeElements.map((element, index) => (
+        <div
+          key={index}
+          className="floating-code"
+          style={{
+            position: 'absolute',
+            top: element.top,
+            left: element.left,
+            right: element.right,
+            animationDelay: `${element.delay}s`,
+            zIndex: 1
+          }}
+        >
+          {element.text}
+        </div>
+      ))}
       
       <div className="hero-content">
         <div className="hero-text">
