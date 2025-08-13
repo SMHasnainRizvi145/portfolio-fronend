@@ -192,7 +192,7 @@ body {
 
 /* Buttons */
 .btn-primary {
-  background: var(--brand-primary);
+  background: linear-gradient(135deg, var(--brand-primary), var(--accent-purple));
   color: white;
   border: none;
   border-radius: 50px;
@@ -201,22 +201,39 @@ body {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
   min-height: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background: var(--brand-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, var(--accent-purple), var(--brand-primary));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  transform: translateY(-1px) scale(1.02);
 }
 
 .btn-secondary {
@@ -229,19 +246,37 @@ body {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
   min-height: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--brand-primary), var(--accent-purple));
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.btn-secondary:hover::before {
+  left: 0;
 }
 
 .btn-secondary:hover {
-  background: var(--brand-primary);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-purple);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
 }
 
 /* Hero Section */
