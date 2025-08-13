@@ -91,15 +91,41 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(15, 16, 16, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-light);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.1) 0%, 
+    rgba(139, 92, 246, 0.1) 50%, 
+    rgba(16, 185, 129, 0.1) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(59, 130, 246, 0.1), 
+    transparent);
+  animation: headerShimmer 3s infinite;
 }
 
 .header.scrolled {
-  background: rgba(15, 16, 16, 0.95);
-  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, 
+    rgba(15, 16, 16, 0.95) 0%, 
+    rgba(26, 28, 27, 0.95) 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--brand-primary);
+}
+
+@keyframes headerShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .header-container {
