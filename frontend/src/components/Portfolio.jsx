@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { portfolioData } from '../../mockData';
+import { portfolioData } from '../mockData';
 import Header from './Header';
 import Hero from './Hero';
 import About from './About';
