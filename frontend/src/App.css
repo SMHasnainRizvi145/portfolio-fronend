@@ -525,8 +525,8 @@ body {
 .floating-code {
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;
-  color: rgba(59, 130, 246, 0.7);
-  background: rgba(0, 0, 0, 0.3);
+  color: rgba(59, 130, 246, 0.8);
+  background: rgba(59, 130, 246, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid rgba(59, 130, 246, 0.3);
@@ -534,27 +534,29 @@ body {
   animation: floatUpDown 6s ease-in-out infinite;
   pointer-events: none;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 .floating-code:nth-child(odd) {
   animation: floatUpDown 8s ease-in-out infinite reverse;
-  color: rgba(139, 92, 246, 0.7);
+  color: rgba(139, 92, 246, 0.8);
+  background: rgba(139, 92, 246, 0.1);
   border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
 .floating-code:nth-child(3n) {
   animation: floatSideways 10s ease-in-out infinite;
-  color: rgba(16, 185, 129, 0.7);
+  color: rgba(16, 185, 129, 0.8);
+  background: rgba(16, 185, 129, 0.1);
   border-color: rgba(16, 185, 129, 0.3);
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 @keyframes floatUpDown {
   0%, 100% {
     transform: translateY(0px) translateX(0px);
-    opacity: 0.7;
+    opacity: 0.8;
   }
   50% {
     transform: translateY(-20px) translateX(10px);
@@ -565,15 +567,15 @@ body {
 @keyframes floatSideways {
   0%, 100% {
     transform: translateX(0px) translateY(0px);
-    opacity: 0.6;
+    opacity: 0.7;
   }
   33% {
     transform: translateX(15px) translateY(-10px);
-    opacity: 0.9;
+    opacity: 1;
   }
   66% {
     transform: translateX(-10px) translateY(-15px);
-    opacity: 0.8;
+    opacity: 0.9;
   }
 }
 
