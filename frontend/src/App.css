@@ -1417,6 +1417,15 @@ body {
     visible: visible;
   }
   
+  .hero-section {
+    padding-top: 80px; /* Adjust for mobile header */
+  }
+  
+  .hero-content {
+    margin-top: -20px; /* Fine-tune for mobile */
+    padding: 1rem;
+  }
+  
   .hero-actions {
     flex-direction: column;
     align-items: center;
